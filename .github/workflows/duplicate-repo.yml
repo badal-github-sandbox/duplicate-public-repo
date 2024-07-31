@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Commit and push if content changed
+      run: |-
+        git config user.name "Automated"
+        git config user.email "actions@users.noreply.github.com"
     - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
       uses: GuillaumeFalourd/clone-github-repo-action@v2.3
       with:
