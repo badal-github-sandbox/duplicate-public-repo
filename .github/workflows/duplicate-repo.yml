@@ -41,6 +41,7 @@ jobs:
         git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/badal-github-sandbox/poc-github-actions
         git remote -v
         git checkout "${GITHUB_REF:11}"
-        git add --all
+        git add .
         git commit -m "Automated push"
-        git push origin master --force
+        git branch -M main
+        git push origin main --force
