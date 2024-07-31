@@ -1,5 +1,10 @@
 name: Version Build
-
+permissions:
+  actions: write       # Necessary to cancel workflow executions
+  checks: write        # Necessary to write reports
+  pull-requests: write # Necessary to comment on PRs
+  contents: read
+  packages: write
 on:
   push:
     branches: [ main ]
@@ -27,7 +32,7 @@ jobs:
         branch: 'main'
         owner: 'GuillaumeFalourd'
         repository: 'poc-github-actions'
-    - name: Access cloned repository content
+    - name: Push cloned repository content
       run: |
         echo "ROOT"
         ls -la
