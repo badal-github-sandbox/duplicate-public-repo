@@ -34,6 +34,7 @@ jobs:
         echo "CLONED REPO"
         cd poc-github-actions
         ls -la  
+        rm -fr .git
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/badal-github-sandbox/poc-github-actions
