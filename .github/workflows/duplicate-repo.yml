@@ -39,4 +39,4 @@ jobs:
         git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/badal-github-sandbox/poc-github-actions
         git checkout "${GITHUB_REF:11}"
         git commit -am "Automated push"
-        git push
+        git push origin master
