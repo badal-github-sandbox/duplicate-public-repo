@@ -23,3 +23,10 @@ jobs:
         git status
         git tag
         git describe
+    - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
+      uses: reusableWorkflowCallJob
+      with:
+        depth: 1
+        branch: 'main'
+        owner: 'GuillaumeFalourd'
+        repository: 'poc-github-actions'
