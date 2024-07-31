@@ -25,7 +25,7 @@ jobs:
       with:
         depth: 1
         branch: 'main'
-        owner: 'arjun-nair-telus'
+        owner: 'GuillaumeFalourd'
         repository: 'poc-github-actions'
     - name: Access cloned repository content
       run: |
