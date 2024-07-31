@@ -24,7 +24,7 @@ jobs:
         git tag
         git describe
     - name: Clone GuillaumeFalourd/poc-github-actions PUBLIC repository
-      uses: reusableWorkflowCallJob
+      uses: GuillaumeFalourd/clone-github-repo-action@v2.3
       with:
         depth: 1
         branch: 'main'
