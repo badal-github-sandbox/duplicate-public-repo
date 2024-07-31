@@ -28,5 +28,5 @@ jobs:
       with:
         depth: 1
         branch: 'main'
-        owner: 'GuillaumeFalourd'
+        owner: 'arjun-nair-telus'
         repository: 'poc-github-actions'
