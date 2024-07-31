@@ -33,10 +33,11 @@ jobs:
         ls -la
         echo "CLONED REPO"
         cd poc-github-actions
-        ls -la  
         rm -fr .git
+        ls -la
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
+        git remote remove origin
         git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/badal-github-sandbox/poc-github-actions
         git remote -v
         git checkout "${GITHUB_REF:11}"
