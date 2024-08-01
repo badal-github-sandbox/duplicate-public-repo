@@ -1,10 +1,5 @@
 name: Version Build
-permissions:
-  actions: write       # Necessary to cancel workflow executions
-  checks: write        # Necessary to write reports
-  pull-requests: write # Necessary to comment on PRs
-  contents: read
-  packages: write
+
 on:
   push:
     branches: [ main ]
@@ -43,7 +38,7 @@ jobs:
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
         git remote remove origin
-        git remote add origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/badal-github-sandbox/poc-github-actions
+        git remote add origin https://x-access-token:${{ secrets.PAT }}@github.com/badal-github-sandbox/poc-github-actions
         git remote -v
         git checkout "${GITHUB_REF:11}"
         git add .
