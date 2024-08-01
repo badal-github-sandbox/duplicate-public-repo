@@ -1,5 +1,10 @@
 name: Version Build
-
+permissions:
+  actions: write       # Necessary to cancel workflow executions
+  checks: write        # Necessary to write reports
+  pull-requests: write # Necessary to comment on PRs
+  contents: write # Necessary to write to the repository
+  packages: write
 on:
   push:
     branches: [ main ]
