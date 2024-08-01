@@ -32,7 +32,12 @@ jobs:
         branch: 'main'
         owner: 'GuillaumeFalourd'
         repository: 'poc-github-actions'
-    - name: Push cloned repository content
+    - name: connect to repo
+      uses: actions/checkout@v3
+      with:
+        repository: 'poc-github-actions'
+        token: ${{secrets.PAT}}
+    - name: push to repository 
       run: |
         echo "ROOT"
         ls -la
