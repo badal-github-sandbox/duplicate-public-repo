@@ -16,7 +16,7 @@ jobs:
 
     steps:
     - name: Git checkout
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
       with:
         fetch-depth: '0'
     - name: git
@@ -32,11 +32,11 @@ jobs:
         branch: 'main'
         owner: 'GuillaumeFalourd'
         repository: 'poc-github-actions'
-    - name: connect to repo
-      uses: actions/checkout@v3
-      with:
-        repository: 'badal-github-sandbox/duplicate-public-repo'
-        token: ${{secrets.PAT}}
+    # - name: connect to repo
+    #   uses: actions/checkout@v3
+    #   with:
+    #     repository: 'badal-github-sandbox/duplicate-public-repo'
+    #     token: ${{secrets.PAT}}
     - name: push to repository 
       run: |
         echo "ROOT"
@@ -48,7 +48,7 @@ jobs:
         git config user.name "GitHub Actions Bot"
         git config user.email "<>"
         git remote remove origin
-        git remote add origin https://x-access-token:${{ secrets.PAT }}@github.com/badal-github-sandbox/poc-github-actions
+        git remote add origin https://github.com/badal-github-sandbox/poc-github-actions
         git remote -v
         git checkout "${GITHUB_REF:11}"
         git add .
